@@ -6,30 +6,54 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import com.fasterxml.jackson.annotation.JsonCreator.Mode;
 
 
 @Controller
 @RequestMapping("/")
 public class WebsiteController {
     
+    // * index
         @GetMapping("/")
         public String home (@RequestParam("param") String name, Model model) {
             model.addAttribute("name", name);
             return new String("index");
         }
 
+    // * movies
         @GetMapping("/movies")
         public String moviesn(Model model) {
             model.addAttribute("movies", getBestMovies());
             return new String("moviesPage");
         }
 
+        @GetMapping("/movies/{id}")
+        public String selectedMovie(@PathVariable("id") String movieId, Model model) {
+            int intId = Integer.parseInt(movieId);
+            model.addAttribute("movies", getBestMovies().get(intId));
+
+            return new String("moviesPage");
+        }
+        
+
+    // * songs
         @GetMapping("/songs")
         public String songs (Model model) {
             model.addAttribute("songs", getBestSongs());
             return new String("songsPage");
         }
+
+        @GetMapping("/songs/{id}")
+        public String getMethodName(@PathVariable("id") String songId, Model model) {
+            int intId = Integer.parseInt(songId);
+            model.addAttribute("songs", getBestSongs().get(intId));
+
+            return new String("songsPage");
+        }
+        
 
 
 
