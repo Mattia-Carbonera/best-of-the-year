@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movies Page</title>
+  </head>
+  <body>
+    <header>
+      <h1>Movies Page</h1>
+    </header>
+    <main>
+      <h2>
+        <ul>
+          <li th:each="movie : ${movies}" th:text="${movie}"></li>
+        </ul>
+      </h2>
+    </main>
+  </body>
+</html>
