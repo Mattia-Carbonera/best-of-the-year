@@ -1,0 +1,22 @@
+<div class="navbar" th:fragment="navbar(page)">
+  <div class="logo">
+    <h1 th:if="${name != null && page == 1}">Best of [[${name}]]</h1>
+    <h1 th:if="${page == 2}">Best of Movies</h1>
+    <h1 th:if="${page == 3}">Best of Songs</h1>
+  </div>
+  <div class="nav-link">
+    <ul>
+      <li th:if="${page != 1}">
+        <a th:href="@{http://localhost:8080/?param=Mattia}">Home</a>
+      </li>
+
+      <li>
+        <a th:href="@{http://localhost:8080/movies}">Movies</a>
+      </li>
+
+      <li>
+        <a th:href="@{http://localhost:8080/songs}">Songs</a>
+      </li>
+    </ul>
+  </div>
+</div>

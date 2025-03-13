@@ -3,16 +3,47 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Bootstrap CSS -->
+    <link
+      th:rel="stylesheet"
+      th:href="@{/webjars/bootstrap/5.3.3/css/bootstrap.min.css}"
+    />
+    <!-- CSS -->
+    <link th:rel="stylesheet" th:href="@{/css/style.css}" />
     <title>Home Page</title>
   </head>
   <body>
     <header>
-      <h1>Home Page</h1>
+      <th:block th:replace="fragments/header :: navbar(1)"></th:block>
     </header>
+
     <main>
-      <h2>
-        <span>Best of the year by [[${name}]]</span>
-      </h2>
+      <div class="container">
+        <div class="home-main-content">
+          <div class="title">
+            <h2 class="best-of-main">Best of by [[${name}]]</h2>
+          </div>
+          <div class="home-content-body">
+            <div class="home-body-img">
+              <img th:src="@{/img/presentation-img.jpg}" alt="" />
+            </div>
+            <div class="home-body-content">
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore
+                quod aperiam dicta neque omnis perferendis totam, quaerat quasi
+                fuga officiis! Nobis ipsa provident cum commodi officiis veniam
+                vitae alias laudantium?
+              </p>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio
+                cumque optio molestiae sed dicta laudantium, corrupti nisi
+                natus, in nobis placeat deserunt labore exercitationem sunt
+                maxime. Eaque nisi corporis libero.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
   </body>
 </html>

@@ -3,18 +3,26 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- CSS -->
+    <link th:rel="stylesheet" th:href="@{/css/style.css}" />
     <title>Movies Page</title>
   </head>
   <body>
     <header>
-      <h1>Movies Page</h1>
+      <th:block th:replace="fragments/header :: navbar(2)"></th:block>
     </header>
     <main>
-      <h2>
+      <div class="list-content">
         <ul>
-          <li th:each="movie : ${movies}" th:text="${movie}"></li>
+          <li th:each="movie : ${movies}">
+            <a
+              th:text="${movie.title}"
+              th:href="@{http://localhost:8080/movies/} + ${movie.getId()}"
+            ></a>
+            <span th:text="${movie.getId()}"></span>
+          </li>
         </ul>
-      </h2>
+      </div>
     </main>
   </body>
 </html>

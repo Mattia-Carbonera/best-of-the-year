@@ -8,4 +8,12 @@ public class Movie extends AbstractContenuto {
 
         this.cast = cast;
     }
+
+    public String[] getCast() {
+        return cast;
+    }
+
+    public void setCast(String[] cast) {
+        this.cast = cast;
+    }
 }

@@ -28,11 +28,11 @@ public abstract class AbstractContenuto {
         this.title = title;
     }
 
-    public int getyear() {
+    public int getYear() {
         return year;
     }
 
-    public void setyear(int year) {
+    public void setYear(int year) {
         this.year = year;
     }
 }

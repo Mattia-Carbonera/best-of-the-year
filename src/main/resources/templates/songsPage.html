@@ -3,18 +3,26 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- CSS -->
+    <link th:rel="stylesheet" th:href="@{/css/style.css}" />
     <title>Songs Page</title>
   </head>
   <body>
     <header>
-      <h1>Songs Page</h1>
+      <th:block th:replace="fragments/header :: navbar(3)"></th:block>
     </header>
     <main>
-      <h2>
+      <div class="list-content">
         <ul>
-          <li th:each="song : ${songs}" th:text="${song}"></li>
+          <li th:each="song : ${songs}">
+            <a
+              th:text="${song.getTitle}"
+              th:href="@{http://localhost:8080/songs/} + ${song.getId()}"
+            ></a>
+            <span th:text="${song.getId()}"></span>
+          </li>
         </ul>
-      </h2>
+      </div>
     </main>
   </body>
 </html>

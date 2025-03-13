@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- CSS -->
+    <link th:rel="stylesheet" th:href="@{/css/style.css}" />
+    <title>Details Page</title>
+  </head>
+  <body>
+    <header>
+      <th:block th:replace="fragments/header :: navbar(2)"></th:block>
+    </header>
+    <main>
+      <div th:if="${pageName == 'songs'}" class="card-container">
+        <h1>Details song page</h1>
+        <h2 if th:text="${songs.getTitle()}"></h2>
+
+        <div class="card-info">
+          <span th:text="${songs.getYear()}"></span>
+          <span> - </span>
+          <span th:text="${songs.getAuthor()}"></span>
+        </div>
+      </div>
+
+      <div th:if="${pageName == 'movies'}" class="card-container">
+        <h1>Details Movie page</h1>
+        <h2 if th:text="${movies.getTitle()}"></h2>
+
+        <div class="card-info">
+          <span th:text="${movies.getYear()}"></span>
+
+          <div class="cats-container">
+            <ul th:with="actors=${movies.getCast()}">
+              <li th:each="actor : ${actors}" th:text="${actor}"></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
