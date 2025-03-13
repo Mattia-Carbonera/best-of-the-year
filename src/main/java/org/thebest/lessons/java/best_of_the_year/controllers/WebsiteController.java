@@ -63,11 +63,11 @@ public class WebsiteController {
         private ArrayList<Movie> getBestMovies() {
             String[] castPlaceHolder = {"Attore Uno", "Attore Due", "Attore Tre", "Attore Quattro", "Attore Cinque"};
             ArrayList<Movie> moviesList = new ArrayList<>();
-            Movie harryOne = new Movie(0, "Harry Potter e la pietra filosofale", 2001, castPlaceHolder);
-            Movie harryFour = new Movie(1, "Harry Potter e il calic e di fuoco", 2005, castPlaceHolder);
-            Movie lordOfRings = new Movie(2, "Il signore dedli anelli: le due torri", 2003, castPlaceHolder);
-            Movie matrix = new Movie(3, "Matrix", 1999, castPlaceHolder);
-            Movie centerOfEarth = new Movie(4, "Viaggio al centro della terra", 2009, castPlaceHolder);
+            Movie harryOne = new Movie(0, "Harry Potter e la pietra filosofale", 2001, "/img/pietra-filosofale.webp" , castPlaceHolder);
+            Movie harryFour = new Movie(1, "Harry Potter e il calic e di fuoco", 2005, "/img/calice-di-fuoco.jpg" , castPlaceHolder);
+            Movie lordOfRings = new Movie(2, "Il signore dedli anelli: le due torri", 2003, "/img/le-due-torri.jpg" , castPlaceHolder);
+            Movie matrix = new Movie(3, "Matrix", 1999, "/img/matrix.jpg" , castPlaceHolder);
+            Movie centerOfEarth = new Movie(4, "Viaggio al centro della terra", 2009, "/img/viaggio-al-centro-della-terra.jpg" , castPlaceHolder);
 
             moviesList.add(harryOne);
             moviesList.add(harryFour);
@@ -75,34 +75,22 @@ public class WebsiteController {
             moviesList.add(matrix);
             moviesList.add(centerOfEarth);
 
-            // moviesList.add("Harry Potter e la pietra filosofale");
-            // moviesList.add("Harry Potter e il calic e di fuoco");
-            // moviesList.add("Il signore dedli anelli: le due torri");
-            // moviesList.add("Matrix");
-            // moviesList.add("Viaggio al centro della terra");
-
             return moviesList;
         }
 
         private ArrayList<Song> getBestSongs() {
             ArrayList<Song> songsList = new ArrayList<>();
-            Song highwayToHell = new Song(0, "AC/DC - highway to hell", 1979, "AC/DC");
-            Song learnToFly = new Song(1, "Foo Fighters - Learn to fly", 1999, "Foo Fighters");
-            Song sweetChildoMine = new Song(2, "Guns N' Roses - Sweet child o' mine", 1988, "Guns N' Roses");
-            Song chopSuey = new Song(3, "System Of a Down - Chop suey!", 2001, "System Of a Down");
-            Song twentyoneGuns = new Song(4, "Green Day - 21 guns", 2009, "Green Day");
+            Song highwayToHell = new Song(0, "AC/DC - highway to hell", 1979, "/img/highway-to-hell.jpg" ,"AC/DC");
+            Song learnToFly = new Song(1, "Foo Fighters - Learn to fly", 1999, "/img/Learn-to-fly.jpg" , "Foo Fighters");
+            Song sweetChildoMine = new Song(2, "Guns N' Roses - Sweet child o' mine", 1988, "/img/Sweet-child-o-mine.jpg" , "Guns N' Roses");
+            Song chopSuey = new Song(3, "System Of a Down - Chop suey!", 2001, "/img/Chop-suey.jpeg" , "System Of a Down");
+            Song twentyoneGuns = new Song(4, "Green Day - 21 guns", 2009, "/img/21-guns.jpg" , "Green Day");
 
             songsList.add(highwayToHell);
             songsList.add(learnToFly);
             songsList.add(sweetChildoMine);
             songsList.add(chopSuey);
             songsList.add(twentyoneGuns);
-
-            // songsList.add("AC/DC - highway to hell");
-            // songsList.add("Foo Fighters - Learn to fly");
-            // songsList.add("Guns N' Roses - Sweet child o' mine");
-            // songsList.add("System Of a Down - Chop suey!");
-            // songsList.add("Green Day - 21 guns");
 
             return songsList;
         }

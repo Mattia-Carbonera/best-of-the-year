@@ -9,7 +9,13 @@
   width: 100%;
 }
 
+main h1 {
+  text-align: center;
+  margin: 2rem 0;
+}
+
 /* * FRAGMENT */
+/* navbar */
 .navbar {
   background-color: lightskyblue;
   display: flex;
@@ -46,6 +52,55 @@
   border: 2px solid gray;
 }
 
+/* list of content */
+.list-content {
+  padding: 2rem;
+}
+
+.list-content ul {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.list-content-name {
+  list-style: none;
+  margin: 0.5rem 0;
+  margin: 1rem;
+}
+
+.list-content-name a {
+  text-decoration: none;
+  color: black;
+  font-size: 0.8rem;
+}
+
+.card-presentation-container {
+  text-align: center;
+}
+
+.img-presentation-container img {
+  max-height: 15rem;
+}
+
+/* * back button */
+.back-button {
+  cursor: pointer;
+
+  height: 3.5rem;
+  margin: 1.5rem 2.5rem;
+
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background-color: lightblue;
+}
+
+.back-button img {
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+}
+
 /* * MAIN */
 
 .home-main-content {
@@ -62,4 +117,33 @@
 .home-body-img {
   text-align: center;
   margin-bottom: 2rem;
+}
+
+/* * DETAILS PAGE */
+.card-info * {
+  margin: 1rem 0;
+}
+
+.card-info {
+  text-align: center;
+}
+
+.card-info img {
+  max-height: 30rem;
+}
+
+.cast-list {
+  list-style: none;
+  max-width: 50rem;
+}
+
+.cast-list li {
+  margin: 0 2rem;
+}
+
+.cast-container {
+  display: inline-block;
+  background-color: lightgray;
+  border: 1px solid gray;
+  border-radius: 10px;
 }

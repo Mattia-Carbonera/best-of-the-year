@@ -12,17 +12,11 @@
       <th:block th:replace="fragments/header :: navbar(3)"></th:block>
     </header>
     <main>
-      <div class="list-content">
-        <ul>
-          <li th:each="song : ${songs}">
-            <a
-              th:text="${song.getTitle}"
-              th:href="@{http://localhost:8080/songs/} + ${song.getId()}"
-            ></a>
-            <span th:text="${song.getId()}"></span>
-          </li>
-        </ul>
-      </div>
+      <th:block th:replace="fragments/backButton :: backButton"></th:block>
+
+      <th:block
+        th:replace="fragments/presentationCardContainer :: cardContainer(songs, ${songs})"
+      ></th:block>
     </main>
   </body>
 </html>

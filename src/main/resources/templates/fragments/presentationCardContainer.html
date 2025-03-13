@@ -1,0 +1,17 @@
+<div class="list-content" th:fragment="cardContainer(page, contents)">
+  <h1>my best [[${page}]]</h1>
+  <ul>
+    <li class="list-content-name" th:each="content : ${contents}">
+      <a
+        th:href="@{http://localhost:8080/} + ${page} + '/' + ${content.getId()}"
+      >
+        <div class="card-presentation-container">
+          <div class="img-presentation-container">
+            <img th:src="@{${content.getImage()}}" alt="" />
+          </div>
+          <span th:text="${content.title}"></span>
+        </div>
+      </a>
+    </li>
+  </ul>
+</div>

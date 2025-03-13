@@ -4,11 +4,13 @@ public abstract class AbstractContenuto {
     protected int id;
     protected String title;
     protected int year;
+    protected String image;
 
-    public AbstractContenuto(int id, String title, int year) {
+    public AbstractContenuto(int id, String title, int year, String image) {
         this.id = id;
         this.title = title;
         this.year = year;
+        this.image = image;
     }
 
 
@@ -35,4 +37,13 @@ public abstract class AbstractContenuto {
     public void setYear(int year) {
         this.year = year;
     }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
 }

@@ -12,28 +12,40 @@
       <th:block th:replace="fragments/header :: navbar(2)"></th:block>
     </header>
     <main>
-      <div th:if="${pageName == 'songs'}" class="card-container">
-        <h1>Details song page</h1>
-        <h2 if th:text="${songs.getTitle()}"></h2>
+      <th:block th:replace="fragments/backButton :: backButton"></th:block>
+
+      <!-- * movies -->
+      <div th:if="${pageName == 'movies'}" class="card-container">
+        <h1>Details Movie page</h1>
 
         <div class="card-info">
-          <span th:text="${songs.getYear()}"></span>
-          <span> - </span>
-          <span th:text="${songs.getAuthor()}"></span>
+          <h2 if th:text="${movies.getTitle()}"></h2>
+          <p th:text="'Anno di uscita: ' + ${movies.getYear()}"></p>
+          <div class="img-container">
+            <img th:src="@{${movies.getImage()}}" alt="" />
+          </div>
+          <div class="cast-container">
+            <h3>Cast:</h3>
+            <ul class="cast-list" th:with="actors=${movies.getCast()}">
+              <li th:each="actor : ${actors}" th:text="${actor}"></li>
+            </ul>
+          </div>
         </div>
       </div>
 
-      <div th:if="${pageName == 'movies'}" class="card-container">
-        <h1>Details Movie page</h1>
-        <h2 if th:text="${movies.getTitle()}"></h2>
+      <!-- * songs -->
+      <div th:if="${pageName == 'songs'}" class="card-container">
+        <h1>Details Song page</h1>
 
         <div class="card-info">
-          <span th:text="${movies.getYear()}"></span>
-
-          <div class="cats-container">
-            <ul th:with="actors=${movies.getCast()}">
-              <li th:each="actor : ${actors}" th:text="${actor}"></li>
-            </ul>
+          <h2 th:text="${songs.getTitle()}"></h2>
+          <div class="img-container">
+            <img th:src="@{${songs.getImage()}}" alt="" />
+          </div>
+          <div class="song-info-container">
+            <span th:text="${songs.getYear()}"></span>
+            <span> - </span>
+            <span th:text="${songs.getAuthor()}"></span>
           </div>
         </div>
       </div>
