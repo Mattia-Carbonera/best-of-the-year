@@ -60,6 +60,7 @@ main h1 {
 .list-content ul {
   display: flex;
   justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
 }
 
@@ -81,6 +82,13 @@ main h1 {
 
 .img-presentation-container img {
   max-height: 15rem;
+  padding: 1rem;
+  transition: 1s;
+  transform: padding;
+}
+
+.img-presentation-container:hover img {
+  padding: 0rem;
 }
 
 /* * back button */
